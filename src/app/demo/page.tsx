@@ -112,6 +112,7 @@ const Staff = () => {
         <div className="flex flex-wrap w-9/12">
           {directors_data.map((director, index) => (
             <Demo.StaffCard
+              key={index}
               src={director.avatar}
               title={director.title}
               name={director.name}

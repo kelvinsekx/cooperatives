@@ -116,7 +116,7 @@ const CardsBalanceGroup = () => {
   return (
     <div className="flex justify-around my-8">
       {[1, 2, 3].map((item, index) => (
-        <BalanceCards index={index} />
+        <BalanceCards index={index} key={index} />
       ))}
     </div>
   );

@@ -36,7 +36,7 @@ export default function Home() {
             <div className="flex gap-8">
               {howItWorks.map((content, index) => {
                 return (
-                  <div className="w-1/3">
+                  <div className="w-1/3" key={index}>
                     <div className="text-xl fontsemibold">{content.header}</div>
                     <div>{content.body}</div>
                   </div>
