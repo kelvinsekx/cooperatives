@@ -30,7 +30,7 @@ export default function Home() {
         <Home.Banner />
         <Card className="my-16">
           <CardHeader className="text-2xl font-bold">
-            Here's how it works
+            {`Here's how it works`}
           </CardHeader>
           <CardContent>
             <div className="flex gap-8">

@@ -202,7 +202,7 @@ const ContactUs = () => {
         </p>
         <div className="flex justify-between w-full">
           {[1, 2, 3].map((director, index) => (
-            <ContactCard />
+            <ContactCard key={index} />
           ))}
         </div>
       </div>
