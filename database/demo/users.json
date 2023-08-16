@@ -1,0 +1,28 @@
+[
+  {
+    "S/N": 1,
+    "Names": "Aloba Olalekan",
+    "DOB": 35942,
+    "Amount Paid": 3600,
+    "Date Paid": "28th April",
+    "Payment Plan": "Quarterly",
+    "Next Payment Due": "26th July",
+    "Current Workplace": "Working with a startup as a Development Engineer (Firmware)",
+    "Tech Level": "Junior",
+    "Career Goals": "*Complete the full prototype of his current work project    *Stay more grounded in ML/AI domain, especially as it relates to HW and Robotics.",
+    "Mentorship": "Not now"
+  },
+  {
+    "S/N": 2,
+    "Names": "David Animasaun",
+    "DOB": 45262,
+    "Amount Paid": 3600,
+    "Date Paid": "29th June",
+    "Payment Plan": "Quarterly",
+    "Next Payment Due": "26th September",
+    "Current Workplace": "Working with a startup as a Frontend Developer (CDLP Hub LTD).",
+    "Tech Level": "Mid-level",
+    "Career Goals": "*Become full-stack before the year runs out                                    *Get into web3 for their money",
+    "Mentorship": "Open to mentorship but can't mentor someone yet."
+  }
+]

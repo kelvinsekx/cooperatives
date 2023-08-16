@@ -105,7 +105,7 @@ const Staff = () => {
   return (
     <div>
       <div className="text-3xl pb-8 font-semibold">Board of Directors</div>
-      <div>
+      <div id="BOD">
         <p className="text-red-400 text-xl font-serif">
           Our extenguised directors
         </p>

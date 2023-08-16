@@ -30,7 +30,7 @@ export const Footer: React.FC = () => (
       <div>
         <p>&copy;2023 Cooperative. All Rights Reserved</p>
         <p className="flex items-center gap-2">
-          <span>built by</span> <Heart strokeWidth={"2px"} size={"12px"} />{" "}
+          <span>built with</span> <Heart strokeWidth={"2px"} size={"12px"} /> by
           kelvinsekx
         </p>
       </div>

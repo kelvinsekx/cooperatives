@@ -1,4 +1,5 @@
 "use client";
+import * as React from "react";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -17,6 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 
+import { MessageContext } from "../../providers";
+
 const FormSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
@@ -27,6 +30,7 @@ const FormSchema = z.object({
 });
 
 export default function InputForm() {
+  const { setMessage } = React.useContext(MessageContext);
   const router = useRouter();
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -42,7 +46,8 @@ export default function InputForm() {
         </div>
       ),
     });
-    setTimeout(() => router.replace("/demo/user"), 1500);
+    setMessage(1);
+    setTimeout(() => router.replace("/demo/1"), 1500);
   }
 
   return (

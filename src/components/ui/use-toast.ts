@@ -158,11 +158,7 @@ function toast({ ...props }: Toast) {
       },
     },
   });
-  console.log({
-    id: id,
-    dismiss,
-    update,
-  });
+
   return {
     id: id,
     dismiss,

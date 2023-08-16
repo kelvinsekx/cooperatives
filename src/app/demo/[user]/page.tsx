@@ -1,9 +1,25 @@
-import { Eye, Landmark, Wallet2, Wheat } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-export default function DashBoard() {
+import { Eye, Landmark, Wallet2, Wheat } from "lucide-react";
+import users from "../../../../database/demo/users.json";
+
+export default function DashBoard({ params }: { params: { user: string } }) {
+  const user = users.find((user) => user["S/N"] === parseInt(params.user));
+
+  if (!user) {
+    return <div>User not found</div>;
+  }
+
   return (
     <div>
-      <DashBoard.Banner />
+      <DashBoard.Banner name={user.Names || ""} />
       <DashBoard.BalanceBoard />
       <DashBoard.CardsBalanceGroup />
     </div>
@@ -23,7 +39,7 @@ const Banner = () => {
           <span>Dashboard</span> <Landmark className="relative top-[2px]" />
         </span>
         <span className="text-base">
-          Hey <b>Ebosa</b> 🍕, <br />
+          Hey <b>{"Kylian"}</b> 🍕, <br />
           you last visited yesterday{" "}
         </span>
       </div>
@@ -49,7 +65,7 @@ const BalanceBoard = () => {
             NGN Balance <Wheat />
           </div>
           <div>
-            <span className="relative bottom-2">Naira</span>
+            <span className="relative bottom-2">₦</span>
             <span className="text-2xl">89,342.78</span>
           </div>
         </div>
@@ -95,7 +111,7 @@ const BalanceCards = ({ index }: { index: number }) => {
         <div className="flex flex-col items-end">
           <div className="text-2xl">Explore Savings</div>
           <div className="text-xl">
-            <span className="relative bottom-1">N</span>100000
+            <span className="relative bottom-1">₦</span>100000
           </div>
         </div>
         <div className="flex flex-col gap-1 text-base mt-2">
@@ -103,9 +119,21 @@ const BalanceCards = ({ index }: { index: number }) => {
           <div>Latest Debit: ₦0.00</div>
           <div>Latest Credit: ₦0.00</div>
         </div>
-        <div className="flex item-center gap-2 mt-8 w-fit ml-auto cursor-pointer">
-          See History <Eye size={"20px"} />
-        </div>
+        <Dialog>
+          <DialogTrigger>
+            <div className="flex item-center gap-2 mt-8 w-fit ml-auto cursor-pointer">
+              See History <Eye size={"20px"} />
+            </div>
+          </DialogTrigger>
+          <DialogContent className="!text-[#2a2472]">
+            <DialogHeader>
+              <DialogTitle>Explore Savings</DialogTitle>
+              <DialogDescription>
+                Your balance is <span>20,3000</span>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
