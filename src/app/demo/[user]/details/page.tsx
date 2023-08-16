@@ -39,7 +39,7 @@ const Body = () => {
   );
 };
 
-Body.List = () => {
+const LIST = () => {
   return (
     <div className="w-[30%]">
       <div className="flex flex-col gap-2">
@@ -53,6 +53,7 @@ Body.List = () => {
     </div>
   );
 };
+Body.List = LIST;
 
 const FormSchema = z.object({
   username: z.string().min(2, {
@@ -63,7 +64,7 @@ const FormSchema = z.object({
   }),
 });
 
-Body.Form = () => {
+const FORM = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -122,3 +123,4 @@ Body.Form = () => {
     </div>
   );
 };
+Body.Form = FORM;

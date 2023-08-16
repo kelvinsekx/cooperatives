@@ -14,7 +14,6 @@ import {
   Table,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -26,7 +25,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Banner } from "@/components/dashboard";
 import { BellRing } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export default function PaymentEvidence() {
@@ -57,7 +55,7 @@ const Body = () => (
   </Tabs>
 );
 
-Body.AddPayment = () => (
+const AddPayment = () => (
   <Card>
     <CardHeader>
       <CardTitle>Let's get your payment evidence</CardTitle>
@@ -88,6 +86,7 @@ Body.AddPayment = () => (
     </CardFooter>
   </Card>
 );
+Body.AddPayment = AddPayment;
 
 const invoices = [
   {
@@ -134,7 +133,7 @@ const invoices = [
   },
 ];
 
-Body.EvidenceHistory = () => {
+const EvidenceHistory = () => {
   return (
     <Card>
       <CardHeader>
@@ -168,3 +167,4 @@ Body.EvidenceHistory = () => {
     </Card>
   );
 };
+Body.EvidenceHistory = EvidenceHistory;

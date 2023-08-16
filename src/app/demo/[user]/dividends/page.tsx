@@ -79,7 +79,7 @@ const Body = () => {
   );
 };
 
-Body.List = () => {
+const LIST = () => {
   return (
     <div>
       {notifications.map((notification, index) => (
@@ -100,3 +100,4 @@ Body.List = () => {
     </div>
   );
 };
+Body.List = LIST;
