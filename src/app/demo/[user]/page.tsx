@@ -7,7 +7,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { Eye, Landmark, Wallet2, Wheat } from "lucide-react";
+import { Banner } from "@/components/dashboard";
+
+import { Eye, Wallet2, Wheat } from "lucide-react";
 import users from "../../../../database/demo/users.json";
 
 export default function DashBoard({ params }: { params: { user: string } }) {
@@ -19,34 +21,13 @@ export default function DashBoard({ params }: { params: { user: string } }) {
 
   return (
     <div>
-      <DashBoard.Banner name={user.Names || ""} />
+      <Banner />
       <DashBoard.BalanceBoard />
       <DashBoard.CardsBalanceGroup />
     </div>
   );
 }
 
-/**
- * WELCOME BANNER
- *
- *
- */
-const Banner = () => {
-  return (
-    <div className="flex justify-between rounded-2xl bg-green-800 h-28 text-white text-4xl">
-      <div className="h-4/5 flex items-center my-auto w-full px-12 justify-between">
-        <span className="flex items-center gap-2">
-          <span>Dashboard</span> <Landmark className="relative top-[2px]" />
-        </span>
-        <span className="text-base">
-          Hey <b>{"Kylian"}</b> 🍕, <br />
-          you last visited yesterday{" "}
-        </span>
-      </div>
-    </div>
-  );
-};
-DashBoard.Banner = Banner;
 /**
  * ENDS BANNER
  */
