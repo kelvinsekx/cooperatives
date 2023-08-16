@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 
-import { MessageContext } from "../../providers";
+import { MessageContext, TType } from "../../providers";
 
 const FormSchema = z.object({
   username: z.string().min(2, {
@@ -30,7 +30,7 @@ const FormSchema = z.object({
 });
 
 export default function InputForm() {
-  const { setMessage } = React.useContext(MessageContext);
+  const { setMessage } = React.useContext(MessageContext) as TType;
   const router = useRouter();
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -46,7 +46,7 @@ export default function InputForm() {
         </div>
       ),
     });
-    setMessage(1);
+    setMessage("1");
     setTimeout(() => router.replace("/demo/1"), 1500);
   }
 

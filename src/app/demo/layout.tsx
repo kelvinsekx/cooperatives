@@ -3,7 +3,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { MessageContext } from "../providers";
+import { MessageContext, TType } from "../providers";
 import { cn } from "@/lib/utils";
 
 import {
@@ -22,7 +22,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Lock } from "lucide-react";
 
 export default function Demo({ children }: React.PropsWithChildren) {
-  const { message } = React.useContext(MessageContext);
+  const { message } = React.useContext(MessageContext) as TType;
   const path = usePathname();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -58,7 +58,7 @@ export function Navigation({
   message,
 }: {
   path: string | null;
-  message: string | null;
+  message: string | null | number;
 }) {
   return (
     <NavigationMenuViewPortRight>
