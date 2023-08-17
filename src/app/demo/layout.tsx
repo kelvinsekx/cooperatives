@@ -117,7 +117,7 @@ export function Navigation({
                 >
                   check the percentage that is driven.
                 </ListItem>
-                <ListItem href="/coming-soon" title="My loans">
+                <ListItem href={`/demo/${message}/loan`} title="My loans">
                   See your loans and het more.
                 </ListItem>
                 <ListItem
